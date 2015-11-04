@@ -15,13 +15,15 @@ function showParticipants() {
       "id": "participant-"+participant.person.id
     }).appendTo($("#participantsList"));
 
-    $( "<a href='#'>" + participant.person.displayName + "</a>", {
+    $( "<a></a>", {
+      "href": "#",
+      "text": participant.person.displayName,
       on: {
         click: function(e) {
           clickedPerson(participant);
         }
       }
-    }).appendTo($("person-"+participant.person.id));
+    }).appendTo($("#person-"+participant.person.id));
   }
 }
 
