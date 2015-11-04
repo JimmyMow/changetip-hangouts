@@ -1,30 +1,28 @@
 function showParticipants() {
   var participants = gapi.hangout.getParticipants();
   console.log("participants: ", participants);
-  var participantsDiv = $("#participantsDiv");
-  console.log("test: ", participantsDiv);
 
-  // var ulTag = document.createElement('ul');
-  // ulTag.id = "participantsList"
-  // document.getElementById("participantsDiv").appendChild(ulTag);​
+  $( "<ul></ul>", {
+    "id": "participantsList"
+  }).appendTo($("#participantsDiv"));
 
-  // for (var index in participants) {
-  //   var participant = participants[index];
-  //   console.log("participant: ", participant);
 
-  //   var listElement = document.createElement('li');
-  //   listElement.id = "person-"+participant.person.id
-  //   ​document.getElementById("participantsList").appendChild(listElement);​
+  for (var index in participants) {
+    var participant = participants[index];
+    console.log("participant: ", participant);
 
-  //   var aTag = document.createElement('a');
-  //   aTag.text = participant.person.displayName;
-  //   aTag.href = "#";
-  //   aTag.addEventListener('click', function(){
-  //     clickedPerson(participant);
-  //   });
+    $( "<li></li>" {
+      "id": "participant-"+participant.person.id
+    }).appendTo($("#participantsList"));
 
-  //   ​document.getElementById("person-"+participant.person.id).appendChild(aTag);​
-  // }
+    $( "<a href='#'>" + participant.person.displayName + "</a>" {
+      on: {
+        click: function(e) {
+          clickedPerson(participant);
+        }
+      }
+    }).appendTo($("person-"+participant.person.id));
+  }
 }
 
 function init() {
