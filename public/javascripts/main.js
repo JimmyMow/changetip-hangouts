@@ -23,7 +23,7 @@ function showParticipants() {
           clickedPerson(participant);
         }
       }
-    }).appendTo($("#person-"+participant.person.id));
+    }).appendTo($("#participant-"+participant.person.id));
   }
 }
 
