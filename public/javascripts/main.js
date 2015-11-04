@@ -1,3 +1,6 @@
+var ChangeTip = require('changetip'),
+    change_tip = new ChangeTip({api_key: ENV["CHANGETIP_API_KEY"]});
+
 function showParticipants() {
   var participants = gapi.hangout.getParticipants();
   console.log("participants: ", participants);
@@ -40,4 +43,9 @@ function init() {
 
 function clickedPerson(participant) {
    console.log("here from clickedPerson with participant: ", participant);
+   // {'receiver': '111750880711215438532', 'message': '/changetip @change here is a cent', 'sender': '108104158228107899864', 'meta': {'sender_display': 'Jack', 'receiver_display': 'Change'}, 'context_uid': 'b12dc3e8fd1a8626'}
+
+    change_tip.send_tip('b12dc3e8fd1a8626', '108104158228107899864', '111750880711215438532', 'googleplus', '@change here is a cent', {'sender_display': 'Jack', 'receiver_display': 'Change'}).then(function(result) {
+        console.log("results: ", results);
+    });
 }
