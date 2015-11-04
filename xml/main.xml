@@ -14,7 +14,6 @@
 <body>
 
   <script src="//plus.google.com/hangouts/_/api/v1/hangout.js"></script>
-  <script src="https://stark-hamlet-6630.herokuapp.com/javascripts/main.js"></script>
 
   <h3>Simple Hangout App</h3>
 
@@ -32,6 +31,7 @@
 
   <script>
   // Wait for gadget to load.
+  <script src="https://stark-hamlet-6630.herokuapp.com/javascripts/main.js"></script>
   gadgets.util.registerOnLoadHandler(init);
   </script>
 
