@@ -1,6 +1,8 @@
 function showParticipants() {
   var participants = gapi.hangout.getParticipants();
   console.log("participants: ", participants);
+  var participantsDiv = $("#participantsDiv");
+  console.log("test: ", participantsDiv);
 
   // var ulTag = document.createElement('ul');
   // ulTag.id = "participantsList"

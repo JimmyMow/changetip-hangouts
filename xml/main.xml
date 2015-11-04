@@ -13,8 +13,6 @@
 
 <body>
 
-  <script src="//plus.google.com/hangouts/_/api/v1/hangout.js"></script>
-
   <h3>Simple Hangout App</h3>
 
   <p>
@@ -29,6 +27,9 @@
 
   <p><a href="http://developers.google.com/+/hangouts/getting-started">Read the docs</a> to learn more about developing hangouts!</a></p>
 
+  <script src="//plus.google.com/hangouts/_/api/v1/hangout.js"></script>
+  <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+  <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
   <script src="https://stark-hamlet-6630.herokuapp.com/javascripts/main.js"></script>
   <script>
   // Wait for gadget to load.
