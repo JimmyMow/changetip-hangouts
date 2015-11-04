@@ -11,11 +11,11 @@ function showParticipants() {
     var participant = participants[index];
     console.log("participant: ", participant);
 
-    $( "<li></li>" {
+    $("<li></li>", {
       "id": "participant-"+participant.person.id
     }).appendTo($("#participantsList"));
 
-    $( "<a href='#'>" + participant.person.displayName + "</a>" {
+    $( "<a href='#'>" + participant.person.displayName + "</a>", {
       on: {
         click: function(e) {
           clickedPerson(participant);
