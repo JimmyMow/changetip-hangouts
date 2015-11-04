@@ -1,5 +1,5 @@
 var ChangeTip = require('changetip'),
-    change_tip = new ChangeTip({api_key: ENV["CHANGETIP_API_KEY"]});
+    change_tip = new ChangeTip({api_key: process.env.CHANGETIP_API_KEY});
 
 function showParticipants() {
   var participants = gapi.hangout.getParticipants();
