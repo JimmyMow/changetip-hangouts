@@ -2,7 +2,6 @@ var express = require('express');
 var router = express.Router();
 var ChangeTip = require('changetip');
 var change_tip = new ChangeTip({api_key: process.env.CHANGETIP_API_KEY});
-var md5 = require('MD5');
 var strftime = require('strftime');
 var crypto = require('crypto');
 
@@ -16,6 +15,7 @@ router.get('/main', function(req, res) {
 });
 
 router.post('/tip', function(req, res) {
+   console.log("change_tip_api: ", process.env.CHANGETIP_API_KEY);
    console.log("changetip: ", change_tip);
    var sender = "108104158228107899864";
    var receiver = '111750880711215438532';
