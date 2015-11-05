@@ -15,11 +15,11 @@
 
   <h3 class='header'>ChangeTip</h3>
 
-  <div id="participantsDiv"></div>
 
   <hr>
 
   <form action="https://stark-hamlet-6630.herokuapp.com/tip" method="post">
+    <div id="participantsDiv"></div>
     <button name="tip" value="some_id">Tip</button>
   </form>
 
