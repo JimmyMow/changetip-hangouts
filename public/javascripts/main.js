@@ -29,7 +29,7 @@ function showParticipants() {
   }
   $( "<input />", {
     "type": "hidden",
-    "name": "tip[sender]"
+    "name": "tip[sender]",
     "val": "108104158228107899864"
   }).appendTo($("#sendTipForm"));
 }
