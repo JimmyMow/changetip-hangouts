@@ -15,18 +15,18 @@ function showParticipants() {
       "id": "participant-"+participant.person.id
     }).appendTo($("#participantsList"));
 
-    $( "<input />", {
-      "type": "checkbox",
-      "name": "receiver",
-      "value": participant.person.id,
-      "id": "receiver-" + participant.person.id
-      }
-    }).appendTo($("#participant-"+participant.person.id));
+    // $( "<input />", {
+    //   "type": "checkbox",
+    //   "name": "receiver",
+    //   "value": participant.person.id,
+    //   "id": "receiver-" + participant.person.id
+    //   }
+    // }).appendTo($("#participant-"+participant.person.id));
 
-    $( "<label />", {
-      "for": "receiver-" + participant.person.id,
-      "text": participant.person.displayName
-    }).appendTo($("#participant-"+participant.person.id));
+    // $( "<label />", {
+    //   "for": "receiver-" + participant.person.id,
+    //   "text": participant.person.displayName
+    // }).appendTo($("#participant-"+participant.person.id));
 
 
   }
