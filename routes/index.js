@@ -36,7 +36,6 @@ router.post('/tip', function(req, res) {
                        '@change here is a cent',
                        {'sender_display': 'Jack', 'receiver_display': 'Change'})
    .then(function(result) {
-        console.log("result: ", result);
         res.send({result: result});
     });
 });
