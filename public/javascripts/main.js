@@ -27,10 +27,11 @@ function showParticipants() {
       "text": participant.person.displayName
     }).appendTo($("#participant-"+participant.person.id));
   }
+
   $( "<input />", {
     "type": "hidden",
     "name": "tip[sender]",
-    "val": "108104158228107899864"
+    "val": gapi.hangout.getLocalParticipant().person.id
   }).appendTo($("#sendTipForm"));
 }
 
@@ -40,8 +41,6 @@ function init() {
       function(eventObj) {
         if (eventObj.isApiReady) {
           showParticipants();
-          var me = gapi.hangout.getLocalParticipant();
-          console.log("me: ", me);
         }
       });
 }
