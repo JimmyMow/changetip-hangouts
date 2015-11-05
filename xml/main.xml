@@ -18,6 +18,8 @@
   <div id="participantsDiv"></div>
 
   <form action="https://stark-hamlet-6630.herokuapp.com/tip" method="post">
+    <div id="participantsDiv"></div>
+    <input type="text" name="money_val" />
     <button name="tip" value="Submit>Tip</button>
   </form>
 
