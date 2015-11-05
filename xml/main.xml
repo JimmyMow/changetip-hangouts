@@ -25,7 +25,7 @@
 
   <hr>
 
-  <form action="/tip" method="post">
+  <form action="https://stark-hamlet-6630.herokuapp.com/tip" method="post">
     <button name="tip" value="some_id">Tip</button>
   </form>
 
