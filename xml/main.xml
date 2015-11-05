@@ -25,6 +25,12 @@
 
   <hr>
 
+  <form action="/tip" method="post">
+    <button name="tip" value="some_id">Tip</button>
+  </form>
+
+  <hr>
+
   <p><a href="http://developers.google.com/+/hangouts/getting-started">Read the docs</a> to learn more about developing hangouts!</a></p>
 
   <script src="//plus.google.com/hangouts/_/api/v1/hangout.js"></script>
