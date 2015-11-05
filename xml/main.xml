@@ -13,7 +13,7 @@
 
 <body>
 
-  <h3>Simple Hangout App</h3>
+  <h3 class='header'>ChangeTip</h3>
 
   <div id="participantsDiv"></div>
 
