@@ -12,7 +12,7 @@ function showParticipants() {
     console.log("participant: ", participant);
 
     $( "<li></li>", {
-      "id": "participant-"+participant.person.id
+      "id": "participant-" + participant.person.id
     }).appendTo($("#participantsList"));
 
     $( "<input>", {
@@ -22,7 +22,7 @@ function showParticipants() {
       "id": "receiver-" + participant.person.id
     }).appendTo($("#participant-"+participant.person.id));
 
-    $( "<label>", {
+    $( "<label></label>", {
       "for": "receiver-" + participant.person.id,
       "text": participant.person.displayName
     }).appendTo($("#participant-"+participant.person.id));
