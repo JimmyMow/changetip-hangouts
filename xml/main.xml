@@ -15,12 +15,6 @@
 
   <h3>Simple Hangout App</h3>
 
-  <p>
-  <input class="button" type="button" value="Show participants!" id="showParticipants"
-      style="visibility:hidden;"
-      onClick="showParticipants()"/>
-  </p>
-
   <div id="participantsDiv"></div>
 
   <hr>
@@ -28,10 +22,6 @@
   <form action="https://stark-hamlet-6630.herokuapp.com/tip" method="post">
     <button name="tip" value="some_id">Tip</button>
   </form>
-
-  <hr>
-
-  <p><a href="http://developers.google.com/+/hangouts/getting-started">Read the docs</a> to learn more about developing hangouts!</a></p>
 
   <script src="//plus.google.com/hangouts/_/api/v1/hangout.js"></script>
   <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>

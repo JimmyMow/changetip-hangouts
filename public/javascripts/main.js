@@ -32,8 +32,9 @@ function init() {
   gapi.hangout.onApiReady.add(
       function(eventObj) {
         if (eventObj.isApiReady) {
-          document.getElementById('showParticipants')
-            .style.visibility = 'visible';
+          showParticipants();
+          // document.getElementById('showParticipants')
+          //   .style.visibility = 'visible';
         }
       });
 }
