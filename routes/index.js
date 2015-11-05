@@ -15,6 +15,7 @@ router.get('/main', function(req, res) {
 });
 
 router.post('/tip', function(req, res) {
+   console.log("data: ", req.body.tip);
    console.log("change_tip_api: ", process.env.CHANGETIP_API_KEY);
    console.log("changetip: ", change_tip);
    var sender = "108104158228107899864";
