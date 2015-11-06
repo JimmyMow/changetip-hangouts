@@ -17,8 +17,7 @@ function showParticipants() {
       "id": "participant-" + participant.person.id
     }).appendTo($("#participantsList"));
 
-    // <img src="smiley.gif" alt="Smiley face" height="42" width="42">
-    $( "<img>" {
+    $( "<img>", {
       "src": participant.person.image.url
     }).appendTo($("#participant-" + participant.person.id));
 
