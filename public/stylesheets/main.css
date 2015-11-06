@@ -3,6 +3,16 @@
    margin: 10px 0;
 }
 
+.participant {
+   list-style-type: none;
+}
+
+.participant img {
+   height: 50px;
+   weight: 50px;
+   border-radius: 50%;
+}
+
 .message {
    margin-bottom: 10px;
 }

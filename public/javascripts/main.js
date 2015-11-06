@@ -14,7 +14,8 @@ function showParticipants() {
     console.log("image url: ", participant.person.image.url);
 
     $( "<li></li>", {
-      "id": "participant-" + participant.person.id
+      "id": "participant-" + participant.person.id,
+      "class": "participant"
     }).appendTo($("#participantsList"));
 
     $( "<img>", {
