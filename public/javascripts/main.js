@@ -31,7 +31,8 @@ function showParticipants() {
 
     $( "<label></label>", {
       "for": "receiver-" + participant.person.id,
-      "text": participant.person.displayName
+      "text": participant.person.displayName,
+      "class": "person-label"
     }).appendTo($("#participant-"+participant.person.id));
   }
 
