@@ -10,10 +10,17 @@ function showParticipants() {
   for (var index in participants) {
     var participant = participants[index];
     console.log("participant: ", participant);
+    console.log("image: ", participant.person.image);
+    console.log("image url: ", participant.person.image.url);
 
     $( "<li></li>", {
       "id": "participant-" + participant.person.id
     }).appendTo($("#participantsList"));
+
+    // <img src="smiley.gif" alt="Smiley face" height="42" width="42">
+    $( "<img>" {
+      "src": participant.person.image.url
+    }).appendTo($("#participant-" + participant.person.id));
 
     $( "<input>", {
       "type": "checkbox",

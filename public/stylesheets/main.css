@@ -3,15 +3,36 @@
    margin: 10px 0;
 }
 
-.button {
-   border-radius: 3px;
-   -moz-border-radius: 3px;
-   background: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#ddd));
-   background: -moz-linear-gradient(top, #fff, #ddd);
-   border: 1px solid #bbb;
+.message {
+   margin-bottom: 10px;
 }
 
-.button:active {
-   background: -webkit-gradient(linear, left top, left bottom, from(#aaa), to(#333));
-   background: -moz-linear-gradient(bottom, #ddd, #aaa);
+.tip-button {
+   background-color: #da8450;
+   border-color: #ae6a40;
+   color: #fff;
+   border-width: 0 0 2px;
+   transition: all .2s ease-in-out !important;
+   font-weight: normal;
+   cursor: pointer;
+   text-align: center;
+   vertical-align: middle;
+   background-image: none;
+   border: 1px solid transparent;
+   white-space: nowrap;
+   padding: 6px 12px;
+   font-size: 14px;
+   line-height: 1.42857;
+   border-radius: 4px;
+   -webkit-user-select: none;
+   -moz-user-select: none;
+   -ms-user-select: none;
+}
+
+.tip-button:hover {
+   background-color: #cc682b;
+   border-coler: #814f30;
+   text-decoration: none;
+   outline: 0;
+   color: #fff;
 }
