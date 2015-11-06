@@ -59,3 +59,11 @@
    outline: 0;
    color: #fff;
 }
+
+.tip-button[disabled] {
+   background-color: #da8450;
+}
+
+.tip-button[disabled]:hover {
+   background-color: #cc682b;
+}
