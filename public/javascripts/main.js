@@ -48,12 +48,37 @@ function init() {
   gapi.hangout.onApiReady.add(
       function(eventObj) {
         if (eventObj.isApiReady) {
-          showParticipants();
+          window.setTimeout(function() {
+                                  gapi.auth.setToken(generateToken());
+                                  showParticipants();
+                                }, 1);
         }
       });
 }
 
 function clickedPerson(participant) {
    console.log("here from clickedPerson with participant: ", participant);
+}
+
+
+// Auth 2.0 Token Code
+function generateToken() {
+  var theToken = new Object();
+  theToken.access_token = getParameter('token');
+
+  return theToken;
+}
+
+function getParameter(paramName) {
+  var searchString = window.location.search.substring(1),
+  i, val, params = searchString.split('&');
+
+  for (i = 0; i < params.length; i++) {
+    val = params[i].split('=');
+    if (val[0] == paramName) {
+      return unescape(val[1]);
+    }
+  }
+  return null;
 }
 
