@@ -14,7 +14,10 @@
 
 <body>
 
-  <h3 class='header'>ChangeTip</h3>
+  <div class="header">
+   <img src="https://cdn.changetip.com/img/brand/combination-mark.png">
+   <p class="instructions">To send a tip, select a Hangout user and type your tip message</p>
+  </div>
 
 
   <hr>
