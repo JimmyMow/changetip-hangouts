@@ -25,8 +25,7 @@
     <input type="submit" value="Tip" class="tip-button btn btn-default" placeholder="Tip message" style="border-width: 0 0 3px; border-color: #ae6a40;">
   </form>
   <script src="//plus.google.com/hangouts/_/api/v1/hangout.js"></script>
-  <script src="//hangoutsapi.talkgadget.google.com/talkgadget/apps/gadgets/js/rpc.js"></script>
-  <script src="//hangoutsapi.talkgadget.google.com/hangouts/api/hangout.js?v=1.1"></script>
+  <script src="https://apis.google.com/js/client.js?onload=init"></script>
   <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
   <script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
   <script src="https://stark-hamlet-6630.herokuapp.com/javascripts/main.js"></script>
