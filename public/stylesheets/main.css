@@ -1,6 +1,15 @@
 .header {
-   text-align: center;
-   margin: 10px 0;
+
+}
+.header img {
+   width: 250px;
+   height: 48px;
+}
+
+.instructions {
+   font-size: 10px;
+   color: #ababab;
+   font-style: italic;
 }
 
 .participant {

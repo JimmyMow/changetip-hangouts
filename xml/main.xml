@@ -20,7 +20,9 @@
   <hr>
 
   <form action="https://stark-hamlet-6630.herokuapp.com/tip" id="sendTipForm" method="post">
-    <div id="participantsDiv"></div>
+    <div id="participantsDiv">
+      <li id="participant-108104158228107899864" class="participant"><img src="https://lh4.googleusercontent.com/-SXJR2Y_J6Jc/AAAAAAAAAAI/AAAAAAAAAAA/2zImwIyHPno/s96-c/photo.jpg"><input type="checkbox" name="tip[receiver]" value="108104158228107899864" id="receiver-108104158228107899864"><label for="receiver-108104158228107899864" class="person-label">Bill Mallers</label></li>
+    </div>
     <input type="text" name="tip[money_val]" class="form-control message" placeholder="Tip message" />
     <input type="submit" value="Tip" class="tip-button btn btn-default" style="border-width: 0 0 3px; border-color: #ae6a40;">
   </form>
