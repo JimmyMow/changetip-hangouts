@@ -1,5 +1,5 @@
-function showParticipants() {
-  var participants = gapi.hangout.getParticipants();
+function showParticipants(participantsList) {
+  var participants = (typeof participantsList === 'undefined') ? gapi.hangout.getParticipants() : participantsList;
   console.log("participants: ", participants);
 
   $( "<ul></ul>", {
@@ -53,9 +53,9 @@ function init() {
           window.setTimeout(function() {
                                   gapi.auth.setToken(generateToken());
                                   showParticipants();
-                                  gapi.hangout.onParticipantsChanged.add(function(participants) {
-                                    console.log("their participants: ", participants);
+                                  gapi.hangout.onParticipantsChanged.add(function(participantsClass) {
                                     console.log("my participants: ", gapi.hangout.getParticipants());
+                                    showParticipants(participantsClass.participants);
                                   });
                                 }, 1);
         }
