@@ -2,6 +2,11 @@ function showParticipants(participantsList) {
   var participants = (typeof participantsList === 'undefined') ? gapi.hangout.getParticipants() : participantsList;
   console.log("participants: ", participants);
 
+  if( $("#participantsList") ) {
+    console.log("here");
+    $("#participantsList").remove();
+  }
+
   $( "<ul></ul>", {
     "id": "participantsList"
   }).appendTo($("#participantsDiv"));
