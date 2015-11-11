@@ -41,8 +41,6 @@ function showParticipants(participantsList) {
     }).appendTo($("#participant-"+participant.person.id));
   }
 
-  $("#participantsList").append('<li id="dad" class="participant"><img src="https://lh4.googleusercontent.com/-SXJR2Y_J6Jc/AAAAAAAAAAI/AAAAAAAAAAA/2zImwIyHPno/s96-c/photo.jpg"><input type="checkbox" name="tip[receiver]" value="108104158228107899864" id="receiver-108104158228107899864"><label for="receiver-108104158228107899864" class="person-label">Bill Mallers</label></li>');
-
   $( "<input />", {
     "type": "hidden",
     "name": "tip[sender]",
