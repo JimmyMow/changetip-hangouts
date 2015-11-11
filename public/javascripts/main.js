@@ -53,13 +53,12 @@ function init() {
           window.setTimeout(function() {
                                   gapi.auth.setToken(generateToken());
                                   showParticipants();
+                                  gapi.hangout.onParticipantsChanged.add(gapi.hangout.ParticipantsChangedEvent(participants) {
+                                    console.log("participants: ", participants);
+                                  });
                                 }, 1);
         }
       });
-}
-
-function clickedPerson(participant) {
-   console.log("here from clickedPerson with participant: ", participant);
 }
 
 
