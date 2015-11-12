@@ -35,8 +35,7 @@ $(document).ready(function() {
       data: realData,
       success: function(data) {
         console.log("data from ajax: ", data);
-      },
-      dataType: 'jsonp'
+      }
     });
   });
 });
