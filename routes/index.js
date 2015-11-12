@@ -35,7 +35,7 @@ router.post('/tip', function(req, res) {
                        sender,
                        receiver,
                        'googleplus',
-                       req.body.tip.money_val,
+                       req.body.tip.message,
                        {'sender_display': 'Jack', 'receiver_display': 'Change'})
    .then(function(result) {
         res.send({result: result});

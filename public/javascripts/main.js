@@ -19,30 +19,25 @@ $(document).ready(function() {
     e.preventDefault();
     console.log("string: ", JSON.stringify($('#sendTipForm').serializeObject()));
     console.log("not string: ", $('#sendTipForm').serializeObject());
-    $.fn.serializeObject = function() {
-        var o = {};
-        var a = this.serializeArray();
-        $.each(a, function() {
-            if (o[this.name] !== undefined) {
-                if (!o[this.name].push) {
-                    o[this.name] = [o[this.name]];
-                }
-                o[this.name].push(this.value || '');
-            } else {
-                o[this.name] = this.value || '';
-            }
-        });
-        return o;
+    var data = $('#sendTipForm').serializeObject();
+//  tip[money_val]: "have a cent buddy"
+//  tip[receiver]: "106784919214705677125"
+//  tip[sender]: "108104158228107899864"
+    var realData = {
+      sender: data['tip[sender]'],
+      receiver: data['tip[receiver]'],
+      message: data['tip[money_val]']
     };
-    // var receiver = $('input[name=tip[receiver]]').val();
-    // var sender = $('input[name=tip[receiver]]').val();
-    // $.ajax({
-    //   type: "POST",
-    //   url: "https://stark-hamlet-6630.herokuapp.com/tip",
-    //   data: ,
-    //   success: success,
-    //   dataType: dataType
-    // });
+    console.log("real data: ", realData);
+    $.ajax({
+      type: "POST",
+      url: "https://stark-hamlet-6630.herokuapp.com/tip",
+      data: realData,
+      success: function(data) {
+        console.log("data from ajax: ", data);
+      },
+      dataType: 'jsonp'
+    });
   });
 });
 
