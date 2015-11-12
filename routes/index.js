@@ -16,10 +16,12 @@ router.get('/main', function(req, res) {
 
 router.post('/tip', function(req, res) {
    console.log("yoyoyoyoyoyoy data: ", req.body.tip);
+   console.log("yoyoyoyoyoyoy data sender: ", req.body.tip.sender);
+   console.log("yoyoyoyoyoyoy data receiver: ", req.body.tip.receiver);
    console.log("change_tip_api: ", process.env.CHANGETIP_API_KEY);
    console.log("changetip: ", change_tip);
-   // var sender = "108104158228107899864";
-   // var receiver = '111750880711215438532';
+   var sender = req.body.tip.sender;
+   var receiver = req.body.tip.receiver;
    var message = "@change here is a cent";
    var post_data = "googleplus " + sender + ": " + message;
    var encode_data = encodeURI(String(post_data));
@@ -30,8 +32,8 @@ router.post('/tip', function(req, res) {
    .digest('hex');
 
    change_tip.send_tip(hash,
-                       req.body.tip.sender,
-                       req.body.tip.receiver,
+                       sender,
+                       receiver,
                        'googleplus',
                        req.body.tip.money_val,
                        {'sender_display': 'Jack', 'receiver_display': 'Change'})
