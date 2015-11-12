@@ -1,3 +1,19 @@
+$(document).ready(function() {
+  $("#sendTipForm").on("submit", function(e) {
+    e.preventDefault();
+    console.log("form serialize: ", $(this).serialize());
+    // var receiver = $('input[name=tip[receiver]]').val();
+    // var sender = $('input[name=tip[receiver]]').val();
+    // $.ajax({
+    //   type: "POST",
+    //   url: "https://stark-hamlet-6630.herokuapp.com/tip",
+    //   data: ,
+    //   success: success,
+    //   dataType: dataType
+    // });
+  });
+});
+
 function showParticipants(participantsList) {
   var participants = (typeof participantsList === 'undefined') ? gapi.hangout.getParticipants() : participantsList;
   console.log("participants: ", participants);
