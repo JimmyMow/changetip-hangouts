@@ -17,7 +17,8 @@ $.fn.serializeObject = function() {
 $(document).ready(function() {
   $("#sendTipForm").on("submit", function(e) {
     e.preventDefault();
-    console.log("form serialize: ", JSON.stringify($('#sendTipForm').serializeObject()));
+    console.log("string: ", JSON.stringify($('#sendTipForm').serializeObject()));
+    console.log("not string: ", $('#sendTipForm').serializeObject());
     $.fn.serializeObject = function() {
         var o = {};
         var a = this.serializeArray();
