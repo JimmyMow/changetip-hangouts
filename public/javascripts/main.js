@@ -31,6 +31,7 @@ $(document).ready(function() {
     };
     console.log("real data: ", realData);
     fetch('https://stark-hamlet-6630.herokuapp.com/tip', {
+      mode: 'no-cors',
       method: 'post',
       headers: {
         'Accept': 'application/json',
