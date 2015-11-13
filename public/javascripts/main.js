@@ -48,7 +48,8 @@ $(document).ready(function() {
       data: realData,
       success: function(data) {
         console.log("yo data: ", data);
-      }
+      },
+      dataType: 'jsonp'
     });
   });
 });
