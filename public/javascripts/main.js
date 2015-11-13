@@ -77,6 +77,12 @@ function showParticipants(participantsList) {
       "id": "receiver-" + participant.person.id
     }).appendTo($("#participant-" + participant.person.id));
 
+    $("<input>", {
+      "type": "hidden",
+      "id": participant.person.id,
+      "value": participant.person.displayName
+    }).appendTo($("#participant-" + participant.person.id));
+
     $( "<label></label>", {
       "for": "receiver-" + participant.person.id,
       "text": participant.person.displayName,
