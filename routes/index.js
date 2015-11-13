@@ -5,12 +5,6 @@ var change_tip = new ChangeTip({api_key: process.env.CHANGETIP_API_KEY});
 var strftime = require('strftime');
 var crypto = require('crypto');
 
-app.use(function(req, res, next) {
-  res.header("Access-Control-Allow-Origin", "*");
-  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-  next();
-});
-
 /* GET home page. */
 router.get('/', function(req, res) {
   res.render('index', { title: 'Express' });
@@ -43,7 +37,10 @@ router.post('/tip', function(req, res) {
                        'googleplus',
                        req.body.message,
                        {'sender_display': 'Jack', 'receiver_display': 'Change'})
+
    .then(function(result) {
+        res.header("Access-Control-Allow-Origin", "*");
+        res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
         res.send({result: result});
     });
 });
