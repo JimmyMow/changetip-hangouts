@@ -105,7 +105,7 @@ function showParticipants(participantsList) {
 
 function onMessageReceived(event) {
   console.log("here here trust me im here");
-  console.log("message homie: ", message);
+  console.log("message homie: ", event);
   // var data = JSON.parse(event);
   // console.log("data baby: ", data);
   $("#tipResponse").append(event.message);
