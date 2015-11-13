@@ -5,6 +5,12 @@ var change_tip = new ChangeTip({api_key: process.env.CHANGETIP_API_KEY});
 var strftime = require('strftime');
 var crypto = require('crypto');
 
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
+});
+
 /* GET home page. */
 router.get('/', function(req, res) {
   res.render('index', { title: 'Express' });
