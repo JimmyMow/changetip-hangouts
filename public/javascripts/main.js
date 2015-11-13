@@ -29,11 +29,11 @@ $(document).ready(function() {
       data: realData,
       success: function(data) {
         var tip = data.result.tip;
-        if (tip.state === "ok") {
-          console.log("here boi!");
-          var message = "<p>Hey " + tip.receiver_display + ", you've been tipped " + fiat_display + " by " + sender_display + ". Collect it <a href='" + collect_url_short + "'>here</a></p>";
-          console.log("message: ", message);
-        }
+        // if (tip.state === "ok") {
+        //   console.log("here boi!");
+        //   var message = "<p>Hey " + tip.receiver_display + ", you've been tipped " + fiat_display + " by " + sender_display + ". Collect it <a href='" + collect_url_short + "'>here</a></p>";
+        //   console.log("message: ", message);
+        // }
       }
     });
   });
