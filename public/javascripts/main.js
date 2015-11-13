@@ -31,11 +31,11 @@ $(document).ready(function() {
         var tip = data.result.tip;
         console.log("dataatata: ", data);
         console.log("tip: ", tip);
-        // if (tip.state === "ok") {
-        //   console.log("here boi!");
-        //   var message = "<p>Hey " + tip.receiver_display + ", you've been tipped " + fiat_display + " by " + sender_display + ". Collect it <a href='" + collect_url_short + "'>here</a></p>";
-        //   console.log("message: ", message);
-        // }
+        if (data.result.state === "ok") {
+          console.log("here boi!");
+          var message = "<p>Hey " + tip.receiver_display + ", you've been tipped " + fiat_display + " by " + sender_display + ". Collect it <a href='" + collect_url_short + "'>here</a></p>";
+          console.log("message: ", message);
+        }
       }
     });
   });
