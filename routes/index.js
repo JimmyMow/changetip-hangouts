@@ -36,7 +36,7 @@ router.post('/tip', function(req, res) {
                        receiver,
                        'googleplus',
                        req.body.message,
-                       {'sender_display': 'Jack', 'receiver_display': 'Change'})
+                       {'sender_display': req.body.sender_display, 'receiver_display': req.body.receiver_display})
 
    .then(function(result) {
         res.header("Access-Control-Allow-Origin", "*");

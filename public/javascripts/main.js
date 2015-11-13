@@ -18,11 +18,17 @@ $(document).ready(function() {
   $("#sendTipForm").on("submit", function(e) {
     e.preventDefault();
     var data = $('#sendTipForm').serializeObject();
+    // <input type="hidden" id="108104158228107899864" value="Jack Mallers">
+    var sender_display = $("#" + data['tip[sender]']).val();
+    var receiver_display = $("#" + data['tip[receiver]']).val();
     var realData = {
       sender: data['tip[sender]'],
       receiver: data['tip[receiver]'],
-      message: data['tip[money_val]']
+      message: data['tip[money_val]'],
+      sender_display: sender_display,
+      receiver_display: receiver_display
     };
+    console.log("realData: ", realData);
     $.ajax({
       type: "POST",
       url: 'https://stark-hamlet-6630.herokuapp.com/tip',
