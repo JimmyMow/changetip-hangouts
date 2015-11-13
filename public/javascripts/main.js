@@ -39,9 +39,8 @@ $(document).ready(function() {
       },
       body: realData
     })
-    .then(function(data) {
-      console.log("data: ", data);
-      console.log("data body: ", data.body);
+    .then((response) => response.json()).then(function(data) {
+        console.log("yo data: ", data);
     });
   });
 });
