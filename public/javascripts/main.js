@@ -103,11 +103,11 @@ function showParticipants(participantsList) {
   }).appendTo($("#sendTipForm"));
 }
 
-function onMessageReceived(event) {
+function onMessageReceived(message) {
   console.log("here here trust me im here");
   // var data = JSON.parse(event);
   // console.log("data baby: ", data);
-  // $("#tipResponse").append(data.message);
+  $("#tipResponse").append(message);
 }
 
 function init() {
