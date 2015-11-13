@@ -39,7 +39,7 @@ $(document).ready(function() {
         if (data.result.state === "ok") {
           var message = "<p>" + tip.receiver_display + " has been tipped" + tip.fiat_display + " by " + tip.sender_display + ". Collect it <a href='" + tip.collect_url_short + "'>here</a>, " + tip.receiver_display + "</p>";
           console.log("message: ", message);
-          gapi.hangout.data.sendMessage(JSON.stringify({message: message}));
+          gapi.hangout.data.sendMessage(message);
           $("#tipResponse").append(message);
         }
       }
@@ -104,9 +104,10 @@ function showParticipants(participantsList) {
 }
 
 function onMessageReceived(event) {
-  var data = JSON.parse(event);
-  console.log("data baby: ", data);
-  $("#tipResponse").append(data.message);
+  console.log("here here trust me im here");
+  // var data = JSON.parse(event);
+  // console.log("data baby: ", data);
+  // $("#tipResponse").append(data.message);
 }
 
 function init() {
