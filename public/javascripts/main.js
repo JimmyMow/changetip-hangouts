@@ -30,25 +30,25 @@ $(document).ready(function() {
       message: data['tip[money_val]']
     };
     console.log("real data: ", realData);
-    fetch('https://stark-hamlet-6630.herokuapp.com/tip', {
-      method: 'post',
-      headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json'
-      },
-      body: realData
-    })
-    .then((response) => response.json()).then(function(data) {
-        console.log("yo data: ", data);
-    });
-    // $.ajax({
-    //   type: "POST",
-    //   url: 'https://stark-hamlet-6630.herokuapp.com/tip',
-    //   data: realData,
-    //   success: function(data) {
+    // fetch('https://stark-hamlet-6630.herokuapp.com/tip', {
+    //   method: 'post',
+    //   headers: {
+    //     'Accept': 'application/json',
+    //     'Content-Type': 'application/json'
+    //   },
+    //   body: realData
+    // })
+    // .then((response) => response.json()).then(function(data) {
     //     console.log("yo data: ", data);
-    //   }
     // });
+    $.ajax({
+      type: "POST",
+      url: 'https://stark-hamlet-6630.herokuapp.com/tip',
+      data: realData,
+      success: function(data) {
+        console.log("yo data: ", data);
+      }
+    });
   });
 });
 
