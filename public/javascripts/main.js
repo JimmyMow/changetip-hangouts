@@ -33,7 +33,7 @@ $(document).ready(function() {
         console.log("tip: ", tip);
         if (data.result.state === "ok") {
           console.log("here boi!");
-          var message = "<p>Hey " + tip.receiver_display + ", you've been tipped " + fiat_display + " by " + sender_display + ". Collect it <a href='" + collect_url_short + "'>here</a></p>";
+          var message = "<p>Hey " + tip.receiver_display + ", you've been tipped " + tip.fiat_display + " by " + tip.sender_display + ". Collect it <a href='" + tip.collect_url_short + "'>here</a></p>";
           console.log("message: ", message);
         }
       }
