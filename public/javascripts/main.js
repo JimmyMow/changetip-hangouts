@@ -23,6 +23,7 @@ $(document).ready(function() {
 //  tip[money_val]: "have a cent buddy"
 //  tip[receiver]: "106784919214705677125"
 //  tip[sender]: "108104158228107899864"
+
     var realData = {
       sender: data['tip[sender]'],
       receiver: data['tip[receiver]'],
@@ -48,8 +49,8 @@ function showParticipants(participantsList) {
   console.log("participants: ", participants);
 
   if( $("#participantsList") ) {
-    console.log("here");
     $("#participantsList").remove();
+    $( "input[name='tip[sender]']" ).remove();
   }
 
   $( "<ul></ul>", {
@@ -102,7 +103,6 @@ function init() {
                                   gapi.auth.setToken(generateToken());
                                   showParticipants();
                                   gapi.hangout.onParticipantsChanged.add(function(participantsClass) {
-                                    console.log("my participants: ", gapi.hangout.getParticipants());
                                     showParticipants(participantsClass.participants);
                                   });
                                 }, 1);
