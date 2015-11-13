@@ -17,36 +17,23 @@ $.fn.serializeObject = function() {
 $(document).ready(function() {
   $("#sendTipForm").on("submit", function(e) {
     e.preventDefault();
-    console.log("string: ", JSON.stringify($('#sendTipForm').serializeObject()));
-    console.log("not string: ", $('#sendTipForm').serializeObject());
     var data = $('#sendTipForm').serializeObject();
-//  tip[money_val]: "have a cent buddy"
-//  tip[receiver]: "106784919214705677125"
-//  tip[sender]: "108104158228107899864"
-
     var realData = {
       sender: data['tip[sender]'],
       receiver: data['tip[receiver]'],
       message: data['tip[money_val]']
     };
-    console.log("real data: ", realData);
-    // fetch('https://stark-hamlet-6630.herokuapp.com/tip', {
-    //   method: 'post',
-    //   headers: {
-    //     'Accept': 'application/json',
-    //     'Content-Type': 'application/json'
-    //   },
-    //   body: realData
-    // })
-    // .then((response) => response.json()).then(function(data) {
-    //     console.log("yo data: ", data);
-    // });
     $.ajax({
       type: "POST",
       url: 'https://stark-hamlet-6630.herokuapp.com/tip',
       data: realData,
       success: function(data) {
-        console.log("yo data: ", data);
+        var tip = data.result.tip;
+        if (tip.state === "ok") {
+          console.log("here boi!");
+          var message = "<p>Hey " + tip.receiver_display + ", you've been tipped " + fiat_display + " by " + sender_display + ". Collect it <a href='" + collect_url_short + "'>here</a></p>";
+          console.log("message: ", message);
+        }
       }
     });
   });
