@@ -78,3 +78,8 @@
 .tip-button[disabled]:hover {
    background-color: #cc682b;
 }
+
+.tip-response {
+   margin-top: 20px;
+   width: 100%;
+}

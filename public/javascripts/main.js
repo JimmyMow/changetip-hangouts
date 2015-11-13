@@ -18,7 +18,6 @@ $(document).ready(function() {
   $("#sendTipForm").on("submit", function(e) {
     e.preventDefault();
     var data = $('#sendTipForm').serializeObject();
-    // <input type="hidden" id="108104158228107899864" value="Jack Mallers">
     var sender_display = $("#" + data['tip[sender]']).val();
     var receiver_display = $("#" + data['tip[receiver]']).val();
     var realData = {
@@ -38,9 +37,9 @@ $(document).ready(function() {
         console.log("dataatata: ", data);
         console.log("tip: ", tip);
         if (data.result.state === "ok") {
-          console.log("here boi!");
           var message = "<p>Hey " + tip.receiver_display + ", you've been tipped " + tip.fiat_display + " by " + tip.sender_display + ". Collect it <a href='" + tip.collect_url_short + "'>here</a></p>";
           console.log("message: ", message);
+          $("#tipResponse").append(message);
         }
       }
     });
