@@ -40,7 +40,15 @@ $(document).ready(function() {
           var message = "<p>" + tip.receiver_display + " has been tipped" + tip.fiat_display + " by " + tip.sender_display + ". Collect it <a href='" + tip.collect_url_short + "'>here</a>, " + tip.receiver_display + "</p>";
           console.log("message: ", message);
           gapi.hangout.data.sendMessage(message);
-          $("#tipResponse").append(message);
+          $( "div", {
+            id: "alertContainer",
+            class: ["alert", "alert-success", "alert-dismissible"],
+            role: "alert"
+          }).appendTo("#tipResponse");
+
+          var button = '<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>';
+          $("#alertContainer").append(button);
+          $("#alertContainer").append(message);
         }
       }
     });
@@ -108,7 +116,15 @@ function onMessageReceived(event) {
   console.log("message homie: ", event);
   // var data = JSON.parse(event);
   // console.log("data baby: ", data);
-  $("#tipResponse").append(event.message);
+  $( "div", {
+    id: "alertContainer",
+    class: ["alert", "alert-success", "alert-dismissible"],
+    role: "alert"
+  }).appendTo("#tipResponse");
+
+  var button = '<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>';
+  $("#alertContainer").append(button);
+  $("#alertContainer").append(event.message);
 }
 
 function init() {
