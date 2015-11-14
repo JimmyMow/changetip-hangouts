@@ -40,7 +40,7 @@ $(document).ready(function() {
           var message = "<p>" + tip.receiver_display + " has been tipped" + tip.fiat_display + " by " + tip.sender_display + ". Collect it <a href='" + tip.collect_url_short + "'>here</a>, " + tip.receiver_display + "</p>";
           console.log("message: ", message);
           gapi.hangout.data.sendMessage(message);
-          $( "div", {
+          $( "<div/>", {
             id: "alertContainer",
             class: ["alert", "alert-success", "alert-dismissible"],
             role: "alert"
@@ -67,7 +67,6 @@ function showParticipants(participantsList) {
   $( "<ul></ul>", {
     "id": "participantsList"
   }).appendTo($("#participantsDiv"));
-
 
   for (var index in participants) {
     var participant = participants[index];
@@ -114,9 +113,7 @@ function showParticipants(participantsList) {
 function onMessageReceived(event) {
   console.log("here here trust me im here");
   console.log("message homie: ", event);
-  // var data = JSON.parse(event);
-  // console.log("data baby: ", data);
-  $( "div", {
+  $( "<div/>", {
     id: "alertContainer",
     class: ["alert", "alert-success", "alert-dismissible"],
     role: "alert"
