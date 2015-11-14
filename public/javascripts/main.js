@@ -42,7 +42,7 @@ $(document).ready(function() {
           gapi.hangout.data.sendMessage(message);
           $( "<div/>", {
             id: "alertContainer",
-            class: ["alert", "alert-success", "alert-dismissible"],
+            class: "alert alert-success alert-dismissible",
             role: "alert"
           }).appendTo($("#tipResponse"));
 
@@ -115,7 +115,7 @@ function onMessageReceived(event) {
   console.log("message homie: ", event);
   $( "<div/>", {
     id: "alertContainer",
-    class: ["alert", "alert-success", "alert-dismissible"],
+    class: "alert alert-success alert-dismissible",
     role: "alert"
   }).appendTo($("#tipResponse"));
 
