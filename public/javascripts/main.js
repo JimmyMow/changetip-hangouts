@@ -44,7 +44,7 @@ $(document).ready(function() {
             id: "alertContainer",
             class: ["alert", "alert-success", "alert-dismissible"],
             role: "alert"
-          }).appendTo("#tipResponse");
+          }).appendTo($("#tipResponse"));
 
           var button = '<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>';
           $("#alertContainer").append(button);
@@ -120,7 +120,7 @@ function onMessageReceived(event) {
     id: "alertContainer",
     class: ["alert", "alert-success", "alert-dismissible"],
     role: "alert"
-  }).appendTo("#tipResponse");
+  }).appendTo($("#tipResponse"));
 
   var button = '<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>';
   $("#alertContainer").append(button);
