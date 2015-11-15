@@ -47,6 +47,17 @@ $(document).ready(function() {
           var button = '<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>';
           $("#alertContainer").append(button);
           $("#alertContainer").append(message);
+        } else if(data.result.error_message === "Missing required field: message") {
+          var message = "<p>You must send a tip message</p>";
+          $( "<div/>", {
+            id: "alertContainer",
+            class: "alert alert-danger alert-dismissible",
+            role: "alert"
+          }).appendTo($("#tipResponse"));
+
+          var button = '<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>';
+          $("#alertContainer").append(button);
+          $("#alertContainer").append(message);
         } else if (data.result.state === "ok") {
           var message = "<p>" + tip.receiver_display + " has been tipped " + tip.fiat_display + " by " + tip.sender_display + ". Collect it <a href='" + tip.collect_url_short + "'>here</a>, " + tip.receiver_display + "</p>";
           console.log("message: ", message);
