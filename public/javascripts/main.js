@@ -1,6 +1,9 @@
 function makeMessage(val) {
   var message = "<p>" + val + "</p>";
+  console.log("message from function: ", message);
+
   $( "<div/>", {
+    id: "alertContainer",
     class: "alert alert-danger alert-dismissible",
     role: "alert"
   }).appendTo($("#tipResponse"));
