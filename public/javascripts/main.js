@@ -1,3 +1,16 @@
+function makeMessage(message) {
+  var message = "<p>" + message + "</p>";
+  $( "<div/>", {
+    class: "alert alert-danger alert-dismissible",
+    role: "alert"
+  }).appendTo($("#tipResponse"));
+
+  var button = '<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>';
+  $("#alertContainer").append(button);
+  $("#alertContainer").append(message);
+  return;
+}
+
 $.fn.serializeObject = function() {
     var o = {};
     var a = this.serializeArray();
@@ -47,98 +60,99 @@ $(document).ready(function() {
         $("#alertContainer").append(message);
       },
       success: function(data) {
-        var pTag = $( "<p/>", {
-          val: "Hey waddup"
-        });
-        pTag.appendTo('body');
-        $(pTag).css("color", "red");
-
         $("#spinner").addClass('hide');
         var tip = data.result.tip;
         console.log("dataatata: ", data);
         console.log("tip: ", tip);
 
         if(!tip) {
-          var message = "<p>There was a problem with your tip</p>";
-          $( "<div/>", {
-            id: "alertContainer",
-            class: "alert alert-danger alert-dismissible",
-            role: "alert"
-          }).appendTo($("#tipResponse"));
+          // var message = "<p>There was a problem with your tip</p>";
+          // $( "<div/>", {
+          //   id: "alertContainer",
+          //   class: "alert alert-danger alert-dismissible",
+          //   role: "alert"
+          // }).appendTo($("#tipResponse"));
 
-          var button = '<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>';
-          $("#alertContainer").append(button);
-          $("#alertContainer").append(message);
+          // var button = '<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>';
+          // $("#alertContainer").append(button);
+          // $("#alertContainer").append(message);
+          makeMessage("There was a problem with your tip");
         }
 
         if (data.result.error_message === "Missing required field: receiver") {
-          var message = "<p>You must select a hangout user to send a tip</p>";
-          $( "<div/>", {
-            id: "alertContainer",
-            class: "alert alert-danger alert-dismissible",
-            role: "alert"
-          }).appendTo($("#tipResponse"));
+          // var message = "<p>You must select a hangout user to send a tip</p>";
+          // $( "<div/>", {
+          //   id: "alertContainer",
+          //   class: "alert alert-danger alert-dismissible",
+          //   role: "alert"
+          // }).appendTo($("#tipResponse"));
 
-          var button = '<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>';
-          $("#alertContainer").append(button);
-          $("#alertContainer").append(message);
+          // var button = '<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>';
+          // $("#alertContainer").append(button);
+          // $("#alertContainer").append(message);
+          makeMessage("You must select a hangout user to send a tip");
         } else if(data.result.error_message === "Missing required field: message") {
-          var message = "<p>You must send a tip message</p>";
-          $( "<div/>", {
-            id: "alertContainer",
-            class: "alert alert-danger alert-dismissible",
-            role: "alert"
-          }).appendTo($("#tipResponse"));
+          // var message = "<p>You must send a tip message</p>";
+          // $( "<div/>", {
+          //   id: "alertContainer",
+          //   class: "alert alert-danger alert-dismissible",
+          //   role: "alert"
+          // }).appendTo($("#tipResponse"));
 
-          var button = '<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>';
-          $("#alertContainer").append(button);
-          $("#alertContainer").append(message);
+          // var button = '<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>';
+          // $("#alertContainer").append(button);
+          // $("#alertContainer").append(message);
+          makeMessage("You must send a tip message");
         } else if (data.result.error_message === "You can't tip yourself.") {
-          var message = "<p>You can't tip yourself</p>";
-          $( "<div/>", {
-            id: "alertContainer",
-            class: "alert alert-danger alert-dismissible",
-            role: "alert"
-          }).appendTo($("#tipResponse"));
+          // var message = "<p>You can't tip yourself</p>";
+          // $( "<div/>", {
+          //   id: "alertContainer",
+          //   class: "alert alert-danger alert-dismissible",
+          //   role: "alert"
+          // }).appendTo($("#tipResponse"));
 
-          var button = '<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>';
-          $("#alertContainer").append(button);
-          $("#alertContainer").append(message);
+          // var button = '<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>';
+          // $("#alertContainer").append(button);
+          // $("#alertContainer").append(message);
+          makeMessage("You can't tip yourself");
         } else if (data.result.error_code === "invalid_sender") {
-          var message = "<p>To send your first tip, login with your GooglePlus account on ChangeTip</p>";
-          $( "<div/>", {
-            id: "alertContainer",
-            class: "alert alert-danger alert-dismissible",
-            role: "alert"
-          }).appendTo($("#tipResponse"));
+          // var message = "<p>To send your first tip, login with your GooglePlus account on ChangeTip</p>";
+          // $( "<div/>", {
+          //   id: "alertContainer",
+          //   class: "alert alert-danger alert-dismissible",
+          //   role: "alert"
+          // }).appendTo($("#tipResponse"));
 
-          var button = '<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>';
-          $("#alertContainer").append(button);
-          $("#alertContainer").append(message);
+          // var button = '<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>';
+          // $("#alertContainer").append(button);
+          // $("#alertContainer").append(message);
+          makeMessage("To send your first tip, login with your GooglePlus account on ChangeTip");
         } else if (data.result.error_code === "duplicate_context_uid") {
-          var message = "<p>That looks like a duplicate tip.</p>";
-          $( "<div/>", {
-            id: "alertContainer",
-            class: "alert alert-danger alert-dismissible",
-            role: "alert"
-          }).appendTo($("#tipResponse"));
+          // var message = "<p>That looks like a duplicate tip.</p>";
+          // $( "<div/>", {
+          //   id: "alertContainer",
+          //   class: "alert alert-danger alert-dismissible",
+          //   role: "alert"
+          // }).appendTo($("#tipResponse"));
 
-          var button = '<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>';
-          $("#alertContainer").append(button);
-          $("#alertContainer").append(message);
+          // var button = '<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>';
+          // $("#alertContainer").append(button);
+          // $("#alertContainer").append(message);
+          makeMessage("That looks like a duplicate tip.");
         } else if (data.result.state === "ok") {
-          var message = "<p>" + tip.receiver_display + " has been tipped " + tip.fiat_display + " by " + tip.sender_display + ". Collect it <a href='" + tip.collect_url_short + "'>here</a>, " + tip.receiver_display + "</p>";
+          var message = tip.receiver_display + " has been tipped " + tip.fiat_display + " by " + tip.sender_display + ". Collect it <a href='" + tip.collect_url_short + "'>here</a>, " + tip.receiver_display;
           console.log("message: ", message);
           gapi.hangout.data.sendMessage(message);
-          $( "<div/>", {
-            id: "alertContainer",
-            class: "alert alert-success alert-dismissible",
-            role: "alert"
-          }).appendTo($("#tipResponse"));
+          // $( "<div/>", {
+          //   id: "alertContainer",
+          //   class: "alert alert-success alert-dismissible",
+          //   role: "alert"
+          // }).appendTo($("#tipResponse"));
 
-          var button = '<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>';
-          $("#alertContainer").append(button);
-          $("#alertContainer").append(message);
+          // var button = '<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>';
+          // $("#alertContainer").append(button);
+          // $("#alertContainer").append(message);
+          makeMessage(message);
         }
       }
     });
