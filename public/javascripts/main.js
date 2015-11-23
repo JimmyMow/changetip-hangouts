@@ -47,6 +47,12 @@ $(document).ready(function() {
         $("#alertContainer").append(message);
       },
       success: function(data) {
+        var pTag = $( "<p/>", {
+          val: "Hey waddup"
+        });
+        pTag.appendTo('body');
+        $(pTag).css("color", "red");
+
         $("#spinner").addClass('hide');
         var tip = data.result.tip;
         console.log("dataatata: ", data);
