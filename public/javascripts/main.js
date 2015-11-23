@@ -28,11 +28,26 @@ $(document).ready(function() {
       receiver_display: receiver_display
     };
     console.log("realData: ", realData);
+    $("#spinner").removeClass('hide');
     $.ajax({
       type: "POST",
       url: 'https://stark-hamlet-6630.herokuapp.com/tip',
       data: realData,
+      error: function(error) {
+        $("#spinner").addClass('hide');
+        var message = "<p>There was a problem with your tip</p>";
+        $( "<div/>", {
+          id: "alertContainer",
+          class: "alert alert-danger alert-dismissible",
+          role: "alert"
+        }).appendTo($("#tipResponse"));
+
+        var button = '<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>';
+        $("#alertContainer").append(button);
+        $("#alertContainer").append(message);
+      },
       success: function(data) {
+        $("#spinner").addClass('hide');
         var tip = data.result.tip;
         console.log("dataatata: ", data);
         console.log("tip: ", tip);
