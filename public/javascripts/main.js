@@ -1,6 +1,7 @@
 function makeMessage(val) {
   var message = "<p>" + val + "</p>";
   console.log("message from function: ", message);
+  console.log($(".alert").length);
 
   $( "<div/>", {
     id: "alertContainer",
