@@ -1,17 +1,17 @@
 function makeMessage(val) {
   var message = "<p>" + val + "</p>";
   console.log("message from function: ", message);
-  console.log($(".alert").length);
+  var num = $(".alert").length;
 
   $( "<div/>", {
-    id: "alertContainer",
+    id: "alertContainer-" + num,
     class: "alert alert-danger alert-dismissible",
     role: "alert"
   }).appendTo($("#tipResponse"));
 
   var button = '<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>';
-  $("#alertContainer").append(button);
-  $("#alertContainer").append(message);
+  $("#alertContainer-" + num).append(button);
+  $("#alertContainer-" + num).append(message);
   return;
 }
 
