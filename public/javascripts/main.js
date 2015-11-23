@@ -1,5 +1,5 @@
-function makeMessage(message) {
-  var message = "<p>" + message + "</p>";
+function makeMessage(val) {
+  var message = "<p>" + val + "</p>";
   $( "<div/>", {
     class: "alert alert-danger alert-dismissible",
     role: "alert"
