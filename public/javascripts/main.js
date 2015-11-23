@@ -36,6 +36,20 @@ $(document).ready(function() {
         var tip = data.result.tip;
         console.log("dataatata: ", data);
         console.log("tip: ", tip);
+
+        if(!tip) {
+          var message = "<p>There was a problem with your tip</p>";
+          $( "<div/>", {
+            id: "alertContainer",
+            class: "alert alert-danger alert-dismissible",
+            role: "alert"
+          }).appendTo($("#tipResponse"));
+
+          var button = '<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>';
+          $("#alertContainer").append(button);
+          $("#alertContainer").append(message);
+        }
+
         if (data.result.error_message === "Missing required field: receiver") {
           var message = "<p>You must select a hangout user to send a tip</p>";
           $( "<div/>", {
