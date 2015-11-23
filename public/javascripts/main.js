@@ -107,6 +107,8 @@ $(document).ready(function() {
         }
       }
     });
+    $('input[type=checkbox]').attr('checked', false);
+    $('#tipMessageInput').val('');
   });
 });
 
