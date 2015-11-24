@@ -15,11 +15,6 @@ router.get('/main', function(req, res) {
 });
 
 router.post('/tip', function(req, res) {
-   console.log("yoyoyoyoyoyoy data: ", req.body);
-   console.log("yoyoyoyoyoyoy data sender: ", req.body.sender);
-   console.log("yoyoyoyoyoyoy data receiver: ", req.body.receiver);
-   console.log("change_tip_api: ", process.env.CHANGETIP_API_KEY);
-   console.log("changetip: ", change_tip);
    var sender = req.body.sender;
    var receiver = req.body.receiver;
    var message = "@change here is a cent";

@@ -1,6 +1,5 @@
 function makeMessage(val, alertClass) {
   var message = "<p>" + val + "</p>";
-  console.log("message from function: ", message);
   var num = $(".alert").length;
 
   $( "<div/>", {
@@ -44,7 +43,6 @@ $(document).ready(function() {
       sender_display: sender_display,
       receiver_display: receiver_display
     };
-    console.log("realData: ", realData);
     $("#spinner").removeClass('hide');
     $.ajax({
       type: "POST",
@@ -66,8 +64,6 @@ $(document).ready(function() {
       success: function(data) {
         $("#spinner").addClass('hide');
         var tip = data.result.tip;
-        console.log("dataatata: ", data);
-        console.log("tip: ", tip);
 
         if(!tip) {
           makeMessage("There was a problem with your tip", "alert-danger");
@@ -85,7 +81,6 @@ $(document).ready(function() {
           makeMessage("That looks like a duplicate tip.", "alert-danger");
         } else if (data.result.state === "ok") {
           var message = tip.receiver_display + " has been tipped " + tip.fiat_display + " by " + tip.sender_display + ". Collect it <a href='" + tip.collect_url_short + "'>here</a>, " + tip.receiver_display;
-          console.log("message: ", message);
           gapi.hangout.data.sendMessage(message);
           makeMessage(message, "alert-success");
         }
@@ -98,7 +93,6 @@ $(document).ready(function() {
 
 function showParticipants(participantsList) {
   var participants = (typeof participantsList === 'undefined') ? gapi.hangout.getParticipants() : participantsList;
-  console.log("participants: ", participants);
 
   if( $("#participantsList") ) {
     $("#participantsList").remove();
@@ -111,9 +105,6 @@ function showParticipants(participantsList) {
 
   for (var index in participants) {
     var participant = participants[index];
-    console.log("participant: ", participant);
-    console.log("image: ", participant.person.image);
-    console.log("image url: ", participant.person.image.url);
 
     $( "<li></li>", {
       "id": "participant-" + participant.person.id,
@@ -152,8 +143,6 @@ function showParticipants(participantsList) {
 }
 
 function onMessageReceived(event) {
-  console.log("here here trust me im here");
-  console.log("message homie: ", event);
   $( "<div/>", {
     id: "alertContainer",
     class: "alert alert-success alert-dismissible",
