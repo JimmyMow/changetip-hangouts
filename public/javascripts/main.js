@@ -80,7 +80,7 @@ $(document).ready(function() {
         } else if (data.result.error_code === "duplicate_context_uid") {
           makeMessage("That looks like a duplicate tip.", "alert-danger");
         } else if (data.result.state === "ok") {
-          var message = tip.receiver_display + " has been tipped " + tip.fiat_display + " by " + tip.sender_display + ". Collect it <a href='" + tip.collect_url_short + "'>here</a>, " + tip.receiver_display;
+          var message = tip.receiver_display + " has been tipped " + tip.fiat_display + " by " + tip.sender_display + ". Collect it <a target='blank' href='" + tip.collect_url_short + "'>here</a>, " + tip.receiver_display;
           gapi.hangout.data.sendMessage(message);
           makeMessage(message, "alert-success");
         }
