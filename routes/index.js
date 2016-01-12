@@ -17,7 +17,8 @@ router.get('/main', function(req, res) {
 router.post('/tip', function(req, res) {
    var sender = req.body.sender;
    var receiver = req.body.receiver;
-   var message = "@change here is a cent";
+   var message = req.body.message;
+   console.log("message: ", message);
    var post_data = "googleplus " + sender + ": " + message;
    var encode_data = encodeURI(String(post_data));
    var encode_date = encodeURI(strftime('%Y-%m-%d:%H:%M:00', new Date()));
