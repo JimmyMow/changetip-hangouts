@@ -62,6 +62,7 @@ $(document).ready(function() {
         $("#alertContainer").append(message);
       },
       success: function(data) {
+        console.log("data: ", data);
         $("#spinner").addClass('hide');
         var tip = data.result.tip;
 
